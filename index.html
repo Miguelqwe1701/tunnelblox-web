@@ -1,1 +1,77 @@
-Haii OwO this is the place for tunnelblox yay
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tunnelblox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ear {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 40px solid #1e1e1e;
+      position: absolute;
+      top: -30px;
+      z-index: 0;
+    }
+
+    .ear.left {
+      left: 40px;
+      transform: rotate(-15deg);
+    }
+
+    .ear.right {
+      right: 40px;
+      transform: rotate(15deg);
+    }
+
+    .box h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #ff79c6;
+    }
+
+    .owo-text {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="box-container">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="box">
+      <h1>Tunnelblox</h1>
+      <p class="owo-text">Haii OwO this is the place for tunnelblox yay</p>
+    </div>
+  </div>
+</body>
+</html>
