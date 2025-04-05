@@ -2,103 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tunnelblox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TunnelBlox</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #ffffff;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }
-
-    .box-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .box {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      margin: 0;
       text-align: center;
-      max-width: 400px;
-      position: relative;
-      z-index: 1;
     }
-
-    .ear {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 45px solid transparent;
-      border-right: 45px solid transparent;
-      border-bottom: 80px solid white; /* outer white part of ear */
-      border-radius: 50% 50% 0 0; /* round the top edges */
-      top: -40px;
-      z-index: 0;
-      animation: wiggle 2s ease-in-out infinite;
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background-color: #2b2b2b;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
     }
-
-    .ear::after {
-      content: "";
-      position: absolute;
-      top: 12px;
-      left: -35px;
-      width: 0;
-      height: 0;
-      border-left: 35px solid transparent;
-      border-right: 35px solid transparent;
-      border-bottom: 60px solid #ffb6c1; /* cute pink inner ear */
-      border-radius: 50% 50% 0 0;
-    }
-
-    .ear.left {
-      left: 40px;
-      transform-origin: bottom center;
-      animation-delay: 0s;
-    }
-
-    .ear.right {
-      right: 40px;
-      transform-origin: bottom center;
-      animation-delay: 1s;
-    }
-
-    @keyframes wiggle {
-      0%, 100% {
-        transform: rotate(0deg);
-      }
-      25% {
-        transform: rotate(10deg);
-      }
-      50% {
-        transform: rotate(-10deg);
-      }
-      75% {
-        transform: rotate(5deg);
-      }
-    }
-
-    .box h1 {
+    h1 {
       font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #ff79c6;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <div class="box-container">
-    <div class="ear left"></div>
-    <div class="ear right"></div>
-    <div class="box">
-      <h1>Tunnelblox</h1>
-    </div>
+  <div class="container">
+    <h1>TunnelBlox</h1>
+    <p>this is a site for server hosting joining to join friends</p>
+    <p>(this site may be our original since its a custom domain for our revival idk)</p>
   </div>
 </body>
 </html>
