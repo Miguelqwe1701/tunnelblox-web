@@ -2,42 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TunnelBlox</title>
+  <title>Tunnelbloxia</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: #fff;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
+    }
+
+    .box-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
       text-align: center;
+      max-width: 400px;
+      position: relative;
+      z-index: 1;
     }
-    .container {
-      max-width: 600px;
-      padding: 20px;
-      background-color: #2b2b2b;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+
+    .ear {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 60px solid white;
+      border-radius: 30% 30% 0 0;
+      top: -30px;
+      z-index: 0;
+      animation: wiggle 2s ease-in-out infinite;
     }
-    h1 {
+
+    .ear::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: -30px;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 50px solid #ffb6c1;
+      border-radius: 30% 30% 0 0;
+    }
+
+    .ear.left {
+      left: 40px;
+      transform-origin: bottom center;
+      animation-delay: 0s;
+    }
+
+    .ear.right {
+      right: 40px;
+      transform-origin: bottom center;
+      animation-delay: 1s;
+    }
+
+    @keyframes wiggle {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(10deg);
+      }
+      50% {
+        transform: rotate(-10deg);
+      }
+      75% {
+        transform: rotate(5deg);
+      }
+    }
+
+    .box h1 {
       font-size: 1.8rem;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
+      color: #ff79c6;
     }
-    p {
-      font-size: 1.1rem;
-      color: #ccc;
+
+    .owo-text {
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>TunnelBlox</h1>
-    <p>this is a site for server hosting joining to join friends</p>
-    <p>(this site may be our original since its a custom domain for our revival idk)</p>
+  <div class="box-container">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="box">
+      <h1>Tunnelblox</h1>
+      <p class="owo-text">Hi this is the tunnelblox site for hosting fr</p>
+    </div>
   </div>
 </body>
 </html>
