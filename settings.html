@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tunnelblox</title>
+  <title>Tunnelblox - Settings</title>
   <style>
     body {
       margin: 0;
@@ -50,58 +50,16 @@
       text-align: center;
       max-width: 400px;
       position: relative;
-      opacity: 0;
-      animation: boxSlideIn 2s forwards, fadeIn 2s 1s forwards;
-      transition: transform 0.3s ease;
       margin-top: 80px; /* Add space to account for the topbar */
     }
 
     .box h1 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      animation: rgbPulse 3s infinite;
     }
 
     .text {
       font-size: 1.2rem;
-    }
-
-    @keyframes boxSlideIn {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes rgbPulse {
-      0% {
-        color: rgb(255, 0, 0); /* Red */
-      }
-      25% {
-        color: rgb(0, 255, 0); /* Green */
-      }
-      50% {
-        color: rgb(0, 0, 255); /* Blue */
-      }
-      75% {
-        color: rgb(255, 255, 0); /* Yellow */
-      }
-      100% {
-        color: rgb(255, 0, 255); /* Magenta */
-      }
     }
 
     .topbar a {
@@ -113,19 +71,18 @@
     .topbar a:hover {
       color: #a0a0a0;
     }
-
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="left">Tunnelblox</div>
     <div class="right">
-      <a href="https://tunnelblox.vercel.app/settings.html">Settings</a>
+      <a href="https://tunnelblox.vercel.app/">Home</a>
     </div>
   </div>
   <div class="box">
-    <h1>Tunnelblox</h1>
-    <p class="text">bro hi this is the tunnelblox hosting site on baby ts pmo</p>
+    <h1>Settings</h1>
+    <p class="text">Coming soon...</p>
   </div>
 </body>
 </html>
