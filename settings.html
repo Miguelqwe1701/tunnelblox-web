@@ -1,88 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tunnelblox - Settings</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      flex-direction: column;
-    }
+<title>tunnelblox</title>
+<style type="text/css">
+  html {
+    height: 100%;
+  }
 
-    /* Top bar styles */
-    .topbar {
-      width: 100%;
-      background-color: #1e1e1e;
-      color: #ffffff;
-      display: flex;
-      justify-content: space-between; /* Align text on the left and right */
-      padding: 1rem 2rem; /* Adjusted padding */
-      font-size: 1.5rem;
-      font-weight: bold;
-      position: absolute;
-      top: 0;
-      left: 0;
-      line-height: 2rem; /* Vertically centers the text */
-    }
+  body {
+    background-color: Black;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    height: auto;
+    line-height: 24px;
+    margin: 0;
+    min-width: 320px;
+    text-align: center;
+    overflow: hidden;
+  }
 
-    .topbar .left {
-      text-align: left;
-    }
+  .header {
+    padding: 50px 0 20px;
+  }
 
-    .topbar .right {
-      text-align: right;
-      margin-right: 40px; /* Adjusted space from the right side */
-    }
+  .header img {
+    width: auto;
+    height: 200px;
+    margin: 0 auto;
+  }
 
-    .box {
-      background-color: #1e1e1e;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      text-align: center;
-      max-width: 400px;
-      position: relative;
-      margin-top: 80px; /* Add space to account for the topbar */
-    }
+  .content {
+    text-align: center;
+  }
 
-    .box h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+  .notification {
+    width: auto;
+    height: auto;
+    padding: 12px 20px;
+    margin: 0 auto;
+    line-height: 36px;
+    font-style: normal;
+    font-weight: 300;
+    color: #fff;
+  }
 
-    .text {
-      font-size: 1.2rem;
-    }
+  .count-down {
+    color: #f68802;
+    font-weight: 300;
+  }
 
-    .topbar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
+  .count-down h1 {
+    font-weight: 300;
+  }
 
-    .topbar a:hover {
-      color: #a0a0a0;
-    }
-  </style>
+  .count-down h1.timer {
+    font-weight: 600;
+  }
+</style>
 </head>
-<body>
-  <div class="topbar">
-    <div class="left">Tunnelblox</div>
-    <div class="right">
-      <a href="https://tunnelblox.vercel.app/">Home</a>
+<head>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiod8n4qKiv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKenqP/u7v//Hx/+/ysr//83N///V1f//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACrq6z/CAjS/wYG1v8LC9//ERHq/xoa9/8iIv//MDD//zs7//+Tk///AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBwv8DA9D/BgbW/w0N4v8TE+z/AAB8/wAAiv8GBpT/Bwee//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQHB/wAAiv9jY5v/hYWe/wYGnP8eHrD/HR3M/yIi1v8TE9H/AQHD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAENDlv8BAZP/AgKf/wkJqf8WFsX/LS3o////////////g3xiIPLy//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIr/8vLz/wEBlf+ZmaH/AAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADS0tn/pKSk/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAA//8AAP+fAAD8DwAA4AcAAPADAAD4AQAA+AUAAPh9AAD+fwAA//8AAP//AAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
+</head>
+  <div class="header">
+    <img src="https://i.postimg.cc/KvDBX3tf/robloxteamsitedownimage1.jpg" alt="maintenance">
+  </div>
+  <div class="content">
+    <p id="offlineTxt" class="notification">
+      The Site Will Never Release Until Its Actually Done. <br> Please DON'T check back soon!
+    </p>
+    <div id="countDown" class="count-down">
     </div>
   </div>
-  <div class="box">
-    <h1>Settings</h1>
-    <p class="text">Coming soon...</p>
-  </div>
+  <script type="text/javascript">
+    function countdownLayout(isVisiable) {
+      var countdownElm = document.getElementById("countDown");
+      var countDownTimeHtml = "<h1>Down time: </h1><h1 id='timer' class='timer'></h1>";
+      if (isVisiable) {
+        countdownElm.innerHTML = countDownTimeHtml;
+      } else {
+        countdownElm.innerHTML = "";
+      }
+    }
+
+    function formatCountDown(time) {
+      var _second = 1000;
+      var _minute = _second * 60;
+      var _hour = _minute * 60;
+      var _day = _hour * 24;
+
+      var days = Math.floor(time / _day);
+      var hours = Math.floor((time % _day) / _hour);
+      var minutes = Math.floor((time % _hour) / _minute);
+      var countdownString = "";
+      if (days) {
+        countdownString = (days == 1) ? days + " day " : days + " days ";
+      }
+
+      if (hours == 1 || hours == 0) {
+        countdownString += "0" + hours + " hr ";
+      } else {
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+        countdownString += hours + " hrs ";
+      }
+
+      if (minutes == 1 || minutes == 0) {
+        countdownString += "0" + minutes + " min ";
+      } else {
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        countdownString += minutes + " mins ";
+      }
+
+      if (time <= _minute) {
+        var seconds = Math.floor((time % _minute) / _second);
+        countdownString += seconds + " secs ";
+      }
+
+      return countdownString;
+    }
+
+    function getQuery() {
+      var query = location.search;
+      var result = {isQuerySet: false, params: {}};
+      if (query.length > 0 && query.slice(1).length > 0) {
+        var queries = query.slice(1).split("&");
+        result.isQuerySet = true;
+        for (var i = 0; i < queries.length; i++) {
+          var tmp = queries[i].split("=");
+          result.params[tmp[0]] = tmp[1];
+        }
+      }
+      return result;
+    }
+
+    function timer(params) {
+      var refreshIntervalId;
+      var endTimeString = params['month'] + "/" + params['day'] + "/" + params['year'] + " " + params['hour'] + ":" + params['min'] + " UTC";
+
+      function setTime() {
+        var end = new Date(endTimeString);
+        var now = new Date();
+        var remaining = end - now;
+        if (remaining > 0) {
+          var countdownString = formatCountDown(remaining);
+
+          if (document.getElementById("countDown").children.length === 0) {
+            countdownLayout(true);
+          }
+          var countdownElm = document.getElementById("timer");
+          countdownElm.innerHTML = countdownString;
+
+        } else {
+          clearInterval(refreshIntervalId);
+          countdownLayout(false);
+          return;
+        }
+      }
+
+      refreshIntervalId = setInterval(setTime, 1000);
+    }
+
+    window.onload = function () {
+      // We use a form post to get around browsers caching repeated 302s on GETs
+      window.setTimeout("document.forms[0].submit();", 30000);
+      var result = getQuery();
+      if (result.isQuerySet) {
+        timer(result.params);
+      }
+    };
+
+  </script>
+
+
+
+
 </body>
+
 </html>
